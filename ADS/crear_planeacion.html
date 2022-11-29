@@ -333,10 +333,11 @@ Website: http://www.webthemez.com/
 		
             <div id="page-inner"> 
                 
-                <!-- -------------------------------------------------------------------------------------------------------- -->
-               
+            <!-- -------------------------------------------------------------------------------------------------------- -->
                 <div class="row">
                     <div class="col-md-8">
+
+                        <!-- CAMPOS PARA UBICAR PLANEACIÓN -->
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="sub-title">Grado:</div>
@@ -375,6 +376,7 @@ Website: http://www.webthemez.com/
                             </div>
                         </div>
 
+                        <!-- DETALLES DE ACTIVIDAD -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <div class="card-title">
@@ -382,11 +384,40 @@ Website: http://www.webthemez.com/
                                 </div>
                             </div>
                             <div class="panel-body">
-                                
-                                <div class="sub-title">Textarea</div>
-                                <div>
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div> 
+                                <div class="form-group">
+                                    <label for="nombre_act">Nombre de Actividad:</label>
+                                    <input type="text" class="form-control" id="nombre_act" placeholder="Ingresar nombre de actividad">
+                                </div>
+                                <div class="form-group">
+                                    <label for="objetivo">Objetivo:</label>
+                                    <input type="text" class="form-control" id="objetivo" placeholder="Ingresar objetivo de actividad">
+                                </div>
+                                <div class="form-group">
+                                    <div class="sub-title">Descripción:</div>
+                                    <div>
+                                        <textarea class="form-control" rows="3" id="descripcion"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fecha">Fecha:</label>
+                                    <input type="date" class="form-control" id="fecha" placeholder="Ingresar fecha planeada para la actividad">
+                                </div>
+                                <div class="form-group">
+                                    <label for="material_adj">Materiales adjuntos:</label>
+                                    <input type="file" class="form-control" id="material_adj">
+                                </div>
+                                <div class="form-group">
+                                    <label for="material_ini">Materiales iniciales:</label>
+                                    <div>
+                                        <textarea class="form-control" rows="3" id="material_ini"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="material_adi">Materiales adicionales:</label>
+                                    <div>
+                                        <textarea class="form-control" rows="3" id="material_adi"></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
