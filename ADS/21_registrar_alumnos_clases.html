@@ -289,11 +289,13 @@ Website: http://www.webthemez.com/
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
 		  <div class="header"> 
-            <h1 class="page-header">Registrar alumnos a clases</h1>
+            <h1 class="page-header">
+                Usuarios <small>Registrar alumnos a clases</small>
+            </h1>
             <ol class="breadcrumb">
                 <li><a href="#">Página Principal</a></li>
                 <li class="active">Usuarios</li>
-                <li class="active">Alumnos</li>
+                <li class="active">Registrar alumnos a clases</li>
             </ol> 		
 		</div>
 		
@@ -303,6 +305,17 @@ Website: http://www.webthemez.com/
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
+                                <div class="sub-title">Alumno:</div>
+                                <div>
+                                    <select class="form-control" id="materia">
+                                        <option value="Alumno 1">Alumno 1</option>
+                                        <option value="Alumno 2">Alumno 2</option>
+                                        <option value="Alumno 3">Alumno 3</option>
+                                        <option value="Alumno 4">Alumno 4</option>
+                                        <option value="Alumno 5">Alumno 5</option>
+                                        <option value="Alumno 6">Alumno 6</option>
+                                    </select>
+                                </div>
                                 <div class="sub-title">Grado:</div>
                                 <div>
                                     <select class="form-control" id="grado">
@@ -325,30 +338,20 @@ Website: http://www.webthemez.com/
                                         <option value="6to">F</option>
                                     </select>
                                 </div>
-                                <div class="sub-title">Alumno:</div>
-                                <div>
-                                    <select class="form-control" id="materia">
-                                        <option value="Alumno 1">Alumno 1</option>
-                                        <option value="Alumno 2">Alumno 2</option>
-                                        <option value="Alumno 3">Alumno 3</option>
-                                        <option value="Alumno 4">Alumno 4</option>
-                                        <option value="Alumno 5">Alumno 5</option>
-                                        <option value="Alumno 6">Alumno 6</option>
-                                    </select>
-                                </div>
                                     <br>
                                     <div align="center">
-                                        <a href="#" class="btn btn-success">Agregar</a>
-                                        <a href="#" class="btn btn-danger">Eliminar</a><br>
+                                        <br>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-4"><a href="#" class="btn btn-success">Agregar</a></div>
+                                        <div class="col-md-4"><a href="#" class="btn btn-danger">Eliminar</a></div>
+                                        <div class="col-md-2"></div>
+                                        <br>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-
                     <div class="col-md-6">
-
                         <!-- ------------------------------------------- TABLA ------------------------------------------- -->
                         <div class="panel panel-default">
                             <div class="panel-body">
@@ -357,17 +360,21 @@ Website: http://www.webthemez.com/
                                         <thead>
                                             <tr>
                                                 <th>Materia</th>
+                                                <th>Grupo</th>
                                             </tr>
                                         </thead> 
                                         <tbody>
                                             <tr>
                                                 <td>Español</td>
+                                                <td>A</td>
                                             </tr>
                                             <tr>
                                                 <td>Inglés</td>
+                                                <td>A</td>
                                             </tr>
                                             <tr>
                                                 <td>Matemáticas</td>
+                                                <td>B</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -375,13 +382,10 @@ Website: http://www.webthemez.com/
                             </div>
                         </div>
                     </div>
-
-<!-- ----------------------------------------------------------------------------------------------------------------- -->
-                <!-- SELECCIONAR CAMPOS -->
-                    
+<!-- ----------------------------------------------------------------------------------------------------------------- -->          
                 </div>
                
-                <footer><br><br><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
+                <footer><br><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
 			</div>
              <!-- /. PAGE INNER  -->
             </div>
