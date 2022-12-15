@@ -314,17 +314,19 @@ Website: http://www.webthemez.com/
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
 		  <div class="header"> 
-            <h1 class="page-header">Actualizar calificaciones  parcial</h1>
+            <h1 class="page-header">
+                Califcaciones parciales<small>Actualizar calificaciones parciales</small> </h1>
             <ol class="breadcrumb">
                 <li><a href="#">Página Principal</a></li>
-                <li class="active">Actualizar calificaciones  parcial</li>
+                <li><a href="#">Califcaciones parciales</a></li>
+                <li class="active">Actualizar calificaciones parciales</li>
             </ol> 		
 		</div>
 		
             <div id="page-inner"> 
             <!-- -------------------------------------------------------------------------------------------------------- -->
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
 
                         <!-- TABLA DE ALUMNOS PARA INGRESAR CALIFICACIONES -->
                         <div class="panel panel-default">
@@ -338,35 +340,33 @@ Website: http://www.webthemez.com/
                                                 <th>Parcial I</th>
                                                 <th>Parcial II</th>
                                                 <th>Parcial III</th>
+                                                <th>Final</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>Trejo Aguiñaga Eliane Danae</td>
-                                                <td>Grupo 1</td>
-                                                <td><input type="text" class="form-control" id="calif_par" placeholder="9"></td>
-                                                <td><!--<input type="text" class="form-control" id="calif_par" placeholder="Ingresar calificación">--></td>
-                                                <td>
-                                                    <!--<input type="text" class="form-control" id="calif_par" placeholder="Ingresar calificación">-->
-                                                </td>
+                                                <td>A</td>
+                                                <td><input type="text" class="form-control" id="calif_par1" placeholder="9" ></td>
+                                                <td><input type="text" class="form-control" id="calif_par2" placeholder="Calificar"></td>
+                                                <td><input type="text" class="form-control" id="calif_par3" placeholder="Calificar" ></td>
+                                                <td><input type="text" class="form-control" id="calif_F" placeholder="Calificar"></td>
                                             </tr>
                                             <tr>
                                                 <td>Rebolloso Saucedo Ana Paola</td>
-                                                <td>Grupo 2</td>
-                                                <td><input type="text" class="form-control" id="calif_par" placeholder="8"></td>
-                                                <td><!--<input type="text" class="form-control" id="calif_par" placeholder="Ingresar calificación">--></td>
-                                                <td>
-                                                    <!--<input type="text" class="form-control" id="calif_par" placeholder="Ingresar calificación">-->
-                                                </td>
+                                                <td>A</td>
+                                                <td><input type="text" class="form-control" id="calif_par1" placeholder="9"></td>
+                                                <td><input type="text" class="form-control" id="calif_par2" placeholder="Calificar"></td>
+                                                <td><input type="text" class="form-control" id="calif_par3" placeholder="Calificar" ></td>
+                                                <td><input type="text" class="form-control" id="calif_F" placeholder="Calificar"></td>
                                             </tr>
                                             <tr>
                                                 <td>Tamayo Castro Alejandro</td>
-                                                <td>Grupo 3</td>
-                                                <td><input type="text" class="form-control" id="calif_par" placeholder="9"></td>
-                                                <td><!--<input type="text" class="form-control" id="calif_par" placeholder="Ingresar calificación">--></td>
-                                                <td>
-                                                    <!--<input type="text" class="form-control" id="calif_par" placeholder="Ingresar calificación">-->
-                                                </td>
+                                                <td>A</td>
+                                                <td><input type="text" class="form-control" id="calif_par1" placeholder="9"></td>
+                                                <td><input type="text" class="form-control" id="calif_par2" placeholder="Calificar"></td>
+                                                <td><input type="text" class="form-control" id="calif_par3" placeholder="Calificar"></td>
+                                                <td><input type="text" class="form-control" id="calif_F" placeholder="Calificar"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -377,13 +377,9 @@ Website: http://www.webthemez.com/
 
 <!-- ----------------------------------------------------------------------------------------------------------------- -->
                 <!-- SELECCIONAR CAMPOS -->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <div class="form-group" align="center">
-                                    <br>
-                                    <a href="08.Actualizar calificaciones parcial.html" class="btn btn-info">Modificar parciales anteriores</a>
-                                </div>
                                 <div class="sub-title">Grado:</div>
                                 <div>
                                     <select class="form-control" id="grado">
