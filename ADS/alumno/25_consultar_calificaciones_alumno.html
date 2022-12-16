@@ -13,17 +13,17 @@ Website: http://www.webthemez.com/
     <meta content="webthemez" name="author" />
     <title>Bootstrap Admin html Template : Master - WebThemez</title>
 	<!-- Bootstrap Styles-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/css/font-awesome.css" rel="stylesheet" />
      <!-- Morris Chart Styles-->
    
         <!-- Custom Styles-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
-   <link href='../brilliant-free-bootstrap-admin-template/http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <link href='../../brilliant-free-bootstrap-admin-template/http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -287,11 +287,13 @@ Website: http://www.webthemez.com/
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
-		  <div class="header"> 
-                <h1 class="page-header">
-                    Consultar calificaciones 
-                </h1>		
-		    </div>
+            <div class="header"> 
+              <h1 class="page-header">Consultar calificaciones parciales y final</h1>
+              <ol class="breadcrumb">
+                  <li><a href="24_pagina_principal_general.html">Página Principal</a></li>
+                  <li class="active">Consultar calificaciones parciales y final</li>
+              </ol> 		
+            </div>
 		
             <div id="page-inner">   
                 <!-- /. ROW  -->
@@ -299,19 +301,25 @@ Website: http://www.webthemez.com/
                 <div class="col-md-12">
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
-                        <div class="panel-heading" style="font-size: 25px;">
-                            Nombre:
-                        </div>
                         <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="nombre" class="col-sm-1 control-label">Nombre:</label>
+                                    <div class="col-sm-11">
+                                        <input type="text" class="form-control" id="nombre" disabled placeholder="Eliane Danae Trejo Aguiñaga">
+                                        <br>
+                                    </div>
+                                </div>
+                            </form>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>Grupo</th>
                                             <th>Materia</th>
-                                            <th>1er Parcial</th>
-                                            <th>2do Parcial</th>
-                                            <th>3er Parcial</th>
+                                            <th>Parcial I</th>
+                                            <th>Parcial II</th>
+                                            <th>Parcial III</th>
                                             <th>Final</th>
                                         </tr>
                                     </thead> 
@@ -353,21 +361,21 @@ Website: http://www.webthemez.com/
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/jquery-1.10.2.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/bootstrap.min.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/jquery.metisMenu.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/jquery.metisMenu.js"></script>
      <!-- DATA TABLE SCRIPTS -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.js"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
             });
     </script>
          <!-- Custom Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
     
    
 </body>
