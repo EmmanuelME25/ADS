@@ -13,17 +13,17 @@ Website: http://www.webthemez.com/
     <meta content="webthemez" name="author" />
     <title>Bootstrap Admin html Template : Master - WebThemez</title>
 	<!-- Bootstrap Styles-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/css/font-awesome.css" rel="stylesheet" />
      <!-- Morris Chart Styles-->
    
         <!-- Custom Styles-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
-    <link href="../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -287,49 +287,44 @@ Website: http://www.webthemez.com/
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
-		  <div class="header"> 
-                        <h1 class="page-header">
-                            Consultar calificaciones 
-                        </h1>		
-		</div>
+            <div class="header"> 
+              <h1 class="page-header">Consultar calificaciones parciales y final</h1>
+              <ol class="breadcrumb">
+                  <li><a href="24_pagina_principal_general.html">Página Principal</a></li>
+                  <li class="active">Consultar calificaciones parciales y final</li>
+              </ol> 		
+            </div>
 		
             <div id="page-inner"> 
-               
-            <div class="row">
-            </div>
-                <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-12">
-                  <!--   Kitchen Sink -->
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="panel-heading col-md-1">
-                                    Alumno:
+                <div class="row">
+                 <div class="col-xs-12">
+                     <div class="panel panel-default">
+                         <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="nombre" class="col-sm-1 control-label">Nombre:</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" id="Alumno">
+                                            <option value="A1">Alumno 1</option>
+                                            <option value="A2">Alumno 2</option>
+                                        </select>
+                                        <br>
+                                    </div>
+                                    <div class="col-sm-2" align="center">
+                                        <a href="#" class="btn btn-primary">Consultar</a>
+                                    </div>
                                 </div>
-                                <div class="col-md-5">
-                                    <select class="selectbox col-lg-10">
-                                         <optgroup label="Alumnos">
-                                            <option value="AK">Alumno 1</option>
-                                            <option value="HI">Alumno 2</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="submit" class="btn btn-default">Consultar</button>
-                                </div>
-                                <div class="col-md-4"></div>
-                        </div>
-                        
-                        <div class="panel-body">
+                            </form>
+
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>Grupo</th>
                                             <th>Materia</th>
-                                            <th>1er Parcial</th>
-                                            <th>2do Parcial</th>
-                                            <th>3er Parcial</th>
+                                            <th>Parcial I</th>
+                                            <th>Parcial II</th>
+                                            <th>Parcial III</th>
                                             <th>Final</th>
                                         </tr>
                                     </thead> 
@@ -361,34 +356,36 @@ Website: http://www.webthemez.com/
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
-                     <!-- End  Kitchen Sink -->
-                </div>
-            </div>
-            <footer><br><br><br><br><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
-    </div>
-             <!-- /. PAGE INNER  -->
-            </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+         </div>
+         <footer><br><br><br><br><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
+     </div>
+      <!-- /. PAGE INNER  -->
+
+        </div>
          <!-- /. PAGE WRAPPER  -->
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/jquery-1.10.2.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/bootstrap.min.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/jquery.metisMenu.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/jquery.metisMenu.js"></script>
      <!-- DATA TABLE SCRIPTS -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.js"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
             });
     </script>
          <!-- Custom Js -->
-    <script src="../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
     
    
 </body>
