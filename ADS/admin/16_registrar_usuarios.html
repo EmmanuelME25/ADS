@@ -14,7 +14,6 @@
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-   <link rel="stylesheet" href="../../brilliant-free-bootstrap-admin-template/assets/css/boton-archivo.css">
 </head>
 <body>
     <div id="wrapper">
@@ -192,12 +191,12 @@
         <div id="page-wrapper">
 		    <div class="header"> 
                         <h1 class="page-header">
-                            Materia <small>Actualizar materia</small>
+                            Usuarios <small>Registrar usuarios</small>
                         </h1>
 						<ol class="breadcrumb">
 					  <li><a href="#">Inicio</a></li>
-					  <li><a href="#">Materia</a></li>
-					  <li class="active">Actualizar materia</li>
+					  <li><a href="#">Usuarios</a></li>
+					  <li class="active">Registrar Ususarios</li>
 					</ol> 
 									
 		    </div>
@@ -210,11 +209,41 @@
                 <div class="col-md-10">
                         <div class="panel-heading"> </div>
                             <div class="container" align="center">
-                                <div class="Boton">
-                                    <h2>
-                                        Arrasta o suelta el archivo
-                                    </h2>
-                                    <span>0</span>
+                                <div class="panel panel-default">
+                                    <div class="panel-body" align="left">
+                                        Seleccione el arrchivo de excel que contenga la información de los usuarios a Registrar
+                                        <br>
+                                        <br>
+                                        Recuerde que el archivo tiene que estar de la siguiente manera:
+                                        <br>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>A</th>
+                                                        <th>B</th>
+                                                        <td>C</td>
+                                                        <td>D</td>
+                                                        <td>E</td>
+                                                        <td>F</td>
+                                                        <td>G</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Nombre</td>
+                                                        <td>Apellido Paterno</td>
+                                                        <td>Apellido Materno</td>
+                                                        <td>Tipo de usuario</td>
+                                                        <td>Correo</td>
+                                                        <td>Clave</td>
+                                                        <td>RFC</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                     <input type="file" id="Botonarchivos">
                                 </div>
                                 
@@ -244,7 +273,7 @@
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/jquery.metisMenu.js"></script>
       <!-- Custom Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
-    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/Boton-archivos.js"></script>
+    
     
    
 </body>
