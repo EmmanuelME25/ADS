@@ -254,6 +254,7 @@ INSERT INTO `grupo_materia` (`grupo_idgrupo`, `materia_idmateria`) VALUES
 CREATE TABLE `materia` (
   `idmateria` int(11) NOT NULL,
   `nombre` varchar(80) NOT NULL,
+  `codigo` varchar(80) NOT NULL,
   `plan_estudio` varchar(45) NOT NULL,
   `grado` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
