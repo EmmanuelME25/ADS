@@ -359,7 +359,7 @@ Website: http://www.webthemez.com/
                                             <tr>
                                                 <th>Actividad</th>
                                                 <th>Calificación</th>
-                                                <th>Comentarios</th>
+                                                <!-- <th>Comentarios</th> -->
                                             </tr>
                                         </thead> 
                                         <tbody>
@@ -368,7 +368,7 @@ Website: http://www.webthemez.com/
                                                     echo "<tr>";
                                                    echo "<td>".$RegistroU['nombre']."</td>";
                                                    echo "<td>".$RegistroU['calificacion']."</td>";
-                                                   echo "<td>".$RegistroU['comentarios']."</td>";
+                                                //    echo "<td>".$RegistroU['comentarios']."</td>";
                                                    echo "<tr>";
                                                 }
                                             ?>
