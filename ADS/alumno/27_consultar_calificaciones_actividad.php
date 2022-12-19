@@ -138,7 +138,7 @@ Website: http://www.webthemez.com/
             <div class="header"> 
                 <h1 class="page-header">Consultar calificaciones de actividades</h1>
                 <ol class="breadcrumb">
-                    <li><a href="24_pagina_principal_general.html">Página Principal</a></li>
+                    <li><a href="24_pagina_principal_general.php">Página Principal</a></li>
                     <li class="active">Consultar calificaciones de actividades</li>
                 </ol> 		
             </div>
@@ -180,7 +180,7 @@ Website: http://www.webthemez.com/
                                             <br>
                                         </div>
                                         <div class="col-sm-2" align="center">
-                                            <input type="submit" value= "consultar" id='consultar' name='consultar' class="btn btn-primary" onclick="ShowSelected()"></input>
+                                            <input type="submit" value= "Consultar" id='consultar' name='consultar' class="btn btn-primary" onclick="ShowSelected()"></input>
                                         </div>
                                     </div>
                                 </form>

@@ -1,18 +1,21 @@
 ﻿<?php 
-/*session_start();
-if(!$_SESSION['login'])
+session_start();
+/*if(!$_SESSION['login'])
 {
     header('Location: index.php');
 }*/
 include ('../Connect.php');
-$_SESSION['correo']= "ayuda2@gmail.com";
+// $_SESSION['correo']= "ayuda2@gmail.com";
 $correo = $_SESSION['correo'];
 
 $consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
 $resultadoa = mysqli_query($conex,$consultaa);
 
-$consulta = "SELECT * FROM materia";                            //Consulta Materia
-$resultadoMateria = mysqli_query($conex,$consulta);
+$consultaMateria = "SELECT * FROM alumno_materia where alumno_usuario_correo = '$correo'";          //Consulta Materia
+$resultadoMateria = mysqli_query($conex,$consultaMateria);
+
+$consultaProfe = "SELECT * FROM profesor_alumno where alumno_usuario_correo = '$correo'";   //Consulta para Profesor
+$resultadoProfe = mysqli_query($conex,$consultaProfe);
 
 ?>
 
@@ -120,7 +123,7 @@ Website: http://www.webthemez.com/
 							</ul>
 						</li>	
                     <li>
-                        <a href="34_consultar_materiales_alumno.php" class="active-menu"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="#" class="active-menu"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
@@ -142,7 +145,7 @@ Website: http://www.webthemez.com/
                             Consultar Materiales
                         </h1>
 						<ol class="breadcrumb">
-					  <li><a href="#">Inicio</a></li>
+					  <li><a href="24_pagina_principal_general.php">Inicio</a></li>
 					  <li class="active">Consultar Materiales</li>
 					</ol> 
 									
@@ -175,11 +178,22 @@ Website: http://www.webthemez.com/
                                         <div class="col-sm-4">
                                             <input type="date" class="form-control" id="ff">
                                         </div>
+
+                                        <script>
+                                                function ShowSelected(){
+                                                var op = document.getElementById("fi");
+                                                var op1 = document.getElementById("ff");
+                                                document.cookie = "x = " + op;
+                                                document.cookie = "y = " + op1;
+                                            }
+                                            //ShowSelected();
+                                        </script>
+
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-8"></div>
                                         <div class="col-sm-4" align="right">
-                                            <a href="#" class="btn btn-primary" onclick="actionRead();">Consultar</a>
+                                        <input type="submit" value= "Consultar" id='consultar' name='consultar' class="btn btn-primary" onclick="ShowSelected()"></input>
                                             <br>
                                         </div>
                                     </div>
@@ -189,43 +203,42 @@ Website: http://www.webthemez.com/
                                     <div class="col-sm-6">
                                         <label for="mi">Materiales iniciales:</label>
                                         <div>
-                                            <textarea class="form-control" rows="12" id="mi" disabled>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
-                                                when an unknown printer took a galley of type and scrambled it to make a type 
-                                                specimen book. It has survived not only five centuries, but also the leap into 
-                                                electronic typesetting, remaining essentially unchanged. It was popularised in 
-                                                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                                                and more recently with desktop publishing software like Aldus PageMaker 
-                                                including versions of Lorem Ipsum. It is a long established fact that a 
-                                                reader will be distracted by the readable content of a page when looking 
-                                                at its layout. The point of using Lorem Ipsum is that it has a more-or-less 
-                                                normal distribution of letters, as opposed to using 'Content here, content here', 
-                                                making it look like readable English. Many desktop publishing packages and 
-                                                web page editors now use Lorem Ipsum as their default model text, and a 
-                                                search for 'lorem ipsum' will uncover many web sites still in their infancy.
-                                                </textarea>
+                                            <textarea class="form-control" rows="12" id="mi" >
+                                                <?php
+                                                if(isset($_REQUEST['consultar'])){
+                                                    $txt=$_COOKIE['x'];
+                                                    $txt2=$_COOKIE['y'];
+
+                                                    while($registroMateria = mysqli_fetch_assoc($resultadoMateria) and $registroProfe = mysqli_fetch_assoc($resultadoProfe)){
+                                                        $consultaPlan = "SELECT * FROM planeacion where profesor_usuario_correo = ".'"'.$registroMateria['materia_idmateria'].'"'." AND materia_idmateria = ".'"'.$registroProfe['profesor_usuario_correo'].'"'."";   //Consulta para Planeacion
+                                                        $resultadoPlan = mysqli_query($conex,$consultaPlan);
+                                                        while($registroPlan = mysqli_fetch_assoc($resultadoPlan)){
+                                                            $consultaAct = "SELECT * FROM actividad where ".'"'.$registroPlan['planeacion_idplaneacion'].'"'." AND (fecha between '$txt' and '$txt2')";   //Consulta para Planeacion
+                                                            $resultadoAct = mysqli_query($conex,$consultaAct);
+                                                            if(!$resultadoAct) {
+                                                                var_dump(mysqli_error($conex));
+                                                                exit;
+                                                            }
+                                                        }
+                                                    }
+                                                    while ($RegistroAct = mysqli_fetch_assoc($resultadoAct)) {
+                                                        echo $RegistroAct['	materiales_ini'];
+                                                    }
+                                                }
+                                                ?>
+                                            </textarea>
                                         </div>
                                         <br>
                                     </div>
                                     <div class="col-sm-6">
-                                        <label for="mi">Materiales adicionales:</label>
+                                        <label for="ma">Materiales adicionales:</label>
                                         <div>
-                                            <textarea class="form-control" rows="12" id="mi" disabled>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
-                                                when an unknown printer took a galley of type and scrambled it to make a type 
-                                                specimen book. It has survived not only five centuries, but also the leap into 
-                                                electronic typesetting, remaining essentially unchanged. It was popularised in 
-                                                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                                                and more recently with desktop publishing software like Aldus PageMaker 
-                                                including versions of Lorem Ipsum. It is a long established fact that a 
-                                                reader will be distracted by the readable content of a page when looking 
-                                                at its layout. The point of using Lorem Ipsum is that it has a more-or-less 
-                                                normal distribution of letters, as opposed to using 'Content here, content here', 
-                                                making it look like readable English. Many desktop publishing packages and 
-                                                web page editors now use Lorem Ipsum as their default model text, and a 
-                                                search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                                            <textarea class="form-control" rows="12" id="ma">
+                                                <?php
+                                                    while ($RegistroAct = mysqli_fetch_assoc($resultadoAct)) {
+                                                        echo $RegistroAct['	materiales_adi'];
+                                                    }
+                                                ?>
                                                 </textarea>
                                         </div>
                                         <br>

@@ -8,10 +8,10 @@ include ('../Connect.php');
 // $_SESSION['correo']= "padre3@gmail.com";
 $correo = $_SESSION['correo'];
 
-$consultap = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Padre
+$consultap = "SELECT * FROM usuario where correo = '$correo'";   //Consulta us
 $resultadop = mysqli_query($conex,$consultap);
 
-$consultah = "SELECT usuario_correo FROM alumno where padre_usuario_correo = '$correo'";   //Consulta para Hijos
+$consultah = "SELECT usuario_correo FROM alumno where padre_usuario_correo = '$correo'";   //Consulta alumno
 $resultadoh = mysqli_query($conex,$consultah);
 
 $consultaProfe = "SELECT * FROM profesor";   //Consulta para Profesor
