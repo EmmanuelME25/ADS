@@ -1,4 +1,29 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+// session_start();
+// if(!$_SESSION['login'])
+// {
+//     header('Location: ../index.html');
+// }
+include ('../Connect.php');
+$_SESSION['correo']= "ayuda1@gmail.com";
+$correo = $_SESSION['correo'];
+
+$consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
+$resultadoa = mysqli_query($conex,$consultaa);
+
+$consulta = "SELECT * FROM materia";                            //Consulta Materia
+$resultadoMateria = mysqli_query($conex,$consulta);
+
+$consultal = "SELECT * FROM calif_act ca JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where alumno_usuario_correo = '$correo'";
+$resultadol = mysqli_query($conex,$consultal);
+
+if(isset ($_POST['consultar'])){
+    $consultal = "SELECT * FROM calif_act ca JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where alumno_usuario_correo = '$correo' and actividad_planeacion_materia_idmateria=$cod";
+    $resultadol = mysqli_query($conex,$consultal);
+}
+
+?>
+<!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
@@ -304,26 +329,32 @@ Website: http://www.webthemez.com/
                                     <div class="form-group">
                                         <label for="nombre" class="col-sm-1 control-label">Nombre:</label>
                                         <div class="col-sm-11">
-                                            <input type="text" class="form-control" id="nombre" disabled placeholder="Eliane Danae Trejo Aguiñaga">
+                                        <output type="text" class="form-control" id="nombre">
+                                            <?php while($registroa = mysqli_fetch_assoc($resultadoa)){
+                                                echo $registroa['nombre']." ".$registroa['ap_paterno']." ".$registroa['ap_materno']; //para el nombre
+                                            }?>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="nombre" class="col-sm-1 control-label">Materia:</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="materia">
-                                                <option value="m1">Historia</option>
-                                                <option value="m2">Matemáticas</option>
+                                            <select class="form-control" id="materiase">
+                                                <?php
+                                                    while ($RegistroUsuario = mysqli_fetch_assoc($resultadoMateria)) {
+                                                        echo '<option value="'.$RegistroUsuario['id'].'">'.$RegistroUsuario['nombre'].'</option>';
+                                                    }
+                                                ?>
                                             </select>
                                             <br>
                                         </div>
                                         <div class="col-sm-2" align="center">
-                                            <a href="#" class="btn btn-primary">Consultar</a>
+                                            <a href="#" id='consultar' class="btn btn-primary">Consultar</a>
                                         </div>
                                     </div>
                                 </form>
 
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover">
+                                    <table id="tabla1" class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>Actividad</th>
@@ -332,21 +363,15 @@ Website: http://www.webthemez.com/
                                             </tr>
                                         </thead> 
                                         <tbody>
-                                            <tr>
-                                                <td>Investigación de la Independencia</td>
-                                                <td>7.6</td>
-                                                <td>Excelente</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Línea del tiempo 1</td>
-                                                <td>8.5</td>
-                                                <td>Revisar ortografía</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Presentación culturas antiguas</td>
-                                                <td>3.6</td>
-                                                <td>Excelente</td>
-                                            </tr>
+                                            <?php
+                                                while ($RegistroU = mysqli_fetch_assoc($resultadol)) {
+                                                    echo "<tr>";
+                                                   echo "<td>".$RegistroU['nombre']."</td>";
+                                                   echo "<td>".$RegistroU['calificacion']."</td>";
+                                                   echo "<td>".$RegistroU['comentarios']."</td>";
+                                                   echo "<tr>";
+                                                }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -370,14 +395,17 @@ Website: http://www.webthemez.com/
      <!-- DATA TABLE SCRIPTS -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/jquery.dataTables.js"></script>
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables-example').dataTable();
-            });
-    </script>
+    <script>
+        $("tabla1").ready(function(){
+          actionRead();
+        });
+
+       // $cod = document.getElementById("materiase").value;
+
+      </script>
          <!-- Custom Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
-    
+    <script type="text/javascript" src="../js/27_consultar_calificaciones_actividad.js"></script> 
    
 </body>
 </html>

@@ -1,4 +1,22 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+// session_start();
+// if(!$_SESSION['login'])
+// {
+//     header('Location: ../index.html');
+// }
+include ('../Connect.php');
+$_SESSION['correo']= "ayuda1@gmail.com";
+$correo = $_SESSION['correo'];
+
+$consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
+$resultadoa = mysqli_query($conex,$consultaa);
+
+$consultal = "SELECT g.nombre as grupo, m.nombre as materia, calificacion_p1,calificacion_p2,calificacion_p3,calificacion_final FROM calif_pf cf join materia m on (cf.materia_idmateria=m.idmateria) join grupo_materia gm on (m.idmateria=gm.materia_idmateria) join grupo g on (gm.grupo_idgrupo=g.idgrupo);";
+$resultadol = mysqli_query($conex,$consultal);
+
+
+?>
+<!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
@@ -304,7 +322,10 @@ Website: http://www.webthemez.com/
                                 <div class="form-group">
                                     <label for="nombre" class="col-sm-1 control-label">Nombre:</label>
                                     <div class="col-sm-11">
-                                        <input type="text" class="form-control" id="nombre" disabled placeholder="Eliane Danae Trejo Aguiñaga">
+                                    <output type="text" class="form-control" id="nombre">
+                                            <?php while($registroa = mysqli_fetch_assoc($resultadoa)){
+                                                echo $registroa['nombre']." ".$registroa['ap_paterno']." ".$registroa['ap_materno']; //para el nombre
+                                            }?>
                                         <br>
                                     </div>
                                 </div>
@@ -323,30 +344,18 @@ Website: http://www.webthemez.com/
                                         </tr>
                                     </thead> 
                                     <tbody>
-                                        <tr>
-                                            <td>1CM1</td>
-                                            <td>Español</td>
-                                            <td>7.6</td>
-                                            <td>5.4</td>
-                                            <td>6.8</td>
-                                            <td>7</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1CM1</td>
-                                            <td>Inglés</td>
-                                            <td>8.5</td>
-                                            <td>9.4</td>
-                                            <td>6.8</td>
-                                            <td>9</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1CM1</td>
-                                            <td>Matemáticas</td>
-                                            <td>3.6</td>
-                                            <td>1.4</td>
-                                            <td>6.8</td>
-                                            <td>4</td>
-                                        </tr>
+                                    <?php
+                                        while ($RegistroUS = mysqli_fetch_assoc($resultadol)) {
+                                            echo "<tr>";
+                                            echo "<td>".$RegistroUS['grupo']."</td>";
+                                            echo "<td>".$RegistroUS['materia']."</td>";
+                                            echo "<td>".$RegistroUS['calificacion_p1']."</td>";
+                                            echo "<td>".$RegistroUS['calificacion_p2']."</td>";
+                                            echo "<td>".$RegistroUS['calificacion_p3']."</td>";
+                                            echo "<td>".$RegistroUS['calificacion_final']."</td>";
+                                            echo "</tr>";
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -370,11 +379,11 @@ Website: http://www.webthemez.com/
      <!-- DATA TABLE SCRIPTS -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/jquery.dataTables.js"></script>
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables-example').dataTable();
-            });
-    </script>
+    <script>
+        $(document).ready(function(){
+          actionRead();
+        });
+      </script>
          <!-- Custom Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
     
