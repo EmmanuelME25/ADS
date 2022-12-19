@@ -5,7 +5,7 @@ if(!$_SESSION['login'])
     header('Location: index.php');
 }*/
 include ('../Connect.php');
-$_SESSION['correo']= "ayuda2@gmail.com";
+$_SESSION['correo']= "padre3@gmail.com";
 $correo = $_SESSION['correo'];
 
 $consultap = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Padre
@@ -13,10 +13,8 @@ $resultadop = mysqli_query($conex,$consultap);
 
 $consultah = "SELECT usuario_correo FROM alumno where padre_usuario_correo = '$correo'";   //Consulta para Hijos
 $resultadoh = mysqli_query($conex,$consultah);
-$registroh = mysqli_fetch_assoc($resultadoh);
 
-$consultaa = "SELECT * FROM usuario where correo = '$registroh'";   //Consulta para Alumno
-$resultadoa = mysqli_query($conex,$consultaa);
+
 
 ?>
 
@@ -194,8 +192,14 @@ Website: http://www.webthemez.com/
                                         <label for="nombre" class="col-sm-2 control-label">Alumno:</label>
                                         <div class="col-sm-10">
                                             <select class="form-control" id="nombre">
-                                                <option value="A1">Alumno 1</option>
-                                                <option value="A2">Alumno 2</option>
+                                            <?php 
+                                                while($registroh = mysqli_fetch_assoc($resultadoh)){
+                                                $consultaa = "SELECT * FROM usuario where correo = ".'"'.$registroh['usuario_correo'].'"'."";
+                                                $resultadoa = mysqli_query($conex,$consultaa);
+                                                while($registroa = mysqli_fetch_assoc($resultadoa)){ 
+                                                    echo "<option>".$registroa['nombre']." ".$registroa['ap_paterno']." ".$registroa['ap_materno']."</option>";
+                                                }}
+                                            ?>
                                             </select>
                                             <br>
                                         </div>
