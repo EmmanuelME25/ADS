@@ -14,8 +14,6 @@ $resultadop = mysqli_query($conex,$consultap);
 $consultah = "SELECT usuario_correo FROM alumno where padre_usuario_correo = '$correo'";   //Consulta para Hijos
 $resultadoh = mysqli_query($conex,$consultah);
 
-
-
 ?>
 
 <!DOCTYPE html>
