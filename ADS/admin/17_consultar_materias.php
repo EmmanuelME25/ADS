@@ -1,3 +1,20 @@
+<?php 
+/*session_start();
+if(!$_SESSION['login'])
+{
+    header('Location: index.php');
+}
+*/
+include ('../Connect.php'); 
+//recuperar con GET
+//$correo = $_GET['correo'];
+//$consultadactualizar = "SELECT * FROM docentes WHERE id=".$correo."";
+//2.- Consultar materias
+$consulta = "SELECT * FROM materia"; //Consulta para calificaciones
+$resultado = mysqli_query($conex,$consulta);
+
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -223,36 +240,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="odd gradeX">
-                                                <td>Instrumentos y control</td>
-                                                <td>IyC20</td>
-                                                <td>ISC2020</td>
-                                                <td class="center">V</td>
-                                            </tr>
-                                            <tr class="even gradeC">
-                                                <td>Compiladores</td>
-                                                <td>C20</td>
-                                                <td>ISC2020</td>
-                                                <td class="center">V</td>
-                                            </tr>
-                                            <tr class="odd gradeA">
-                                                <td>Instrumentos y control</td>
-                                                <td>IyC20</td>
-                                                <td>ISC2020</td>
-                                                <td class="center">V</td>
-                                            </tr>
-                                            <tr class="even gradeA">
-                                                <td>Instrumentos y control</td>
-                                                <td>IyC20</td>
-                                                <td>ISC2020</td>
-                                                <td class="center">V</td>
-                                            </tr>
-                                            <tr class="odd gradeA">
-                                                <td>Instrumentos y control</td>
-                                                <td>IyC20</td>
-                                                <td>ISC2020</td>
-                                                <td class="center">V</td>
-                                            </tr>
+                                        <?php 
+                                            while($registro = mysqli_fetch_assoc($resultado)){ //para las materias
+                                                echo "<tr>";
+                                                echo "<td>".$registro['nombre']."</td>";
+                                                echo "<td>".$registro['idmateria']."</td>";
+                                                echo "<td>".$registro['plan_estudio']."</td>";
+                                                echo "<td>".$registro['grado']."</td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>    
