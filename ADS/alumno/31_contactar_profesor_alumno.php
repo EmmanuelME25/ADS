@@ -68,7 +68,7 @@ $resultadoProfe = mysqli_query($conex,$consultaProfe);
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="33_consultar_respuestas.html">
+                            <a href="33_consultar_respuestas.php">
                                 <div>
                                     <strong>Consultar respuestas</strong>
                                 </div>
