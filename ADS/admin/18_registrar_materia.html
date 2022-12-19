@@ -205,51 +205,53 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="panel panel-default">
+                            <form id="formulario" method="post" >
                             <div class="panel-body">
                                 <form class="form-horizontal">
                                     <div class="form-group">
                                         <label for="plan" class="col-sm-2 control-label">Nombre:</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="plan" placeholder="Nombre de la plan">
+                                            <input type="text" class="form-control" name="materia" id="materia" placeholder="Nombre de la plan" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="grado" class="col-sm-2 control-label">Código de identificación:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="grado" placeholder="Código de identifcación:">
+                                            <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Código de identifcación:" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="plan" class="col-sm-2 control-label">Plan de Estudios:</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control" id="grado">
-                                                <option value="Plan 2020">Plan 2020</option>
-                                                <option value="Plan 1998">Plan 1998</option>
+                                            <select class="form-control" name="plan" id="plan" required>
+                                                <option value="2020">Plan 2020</option>
+                                                <option value="1998">Plan 1998</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="grado" class="col-sm-2 control-label">Grado</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control" id="grado">
-                                                <option value="1ro">1ro</option>
-                                                <option value="2do">2do</option>
-                                                <option value="3ro">3ro</option>
-                                                <option value="4to">4to</option>
-                                                <option value="5to">5to</option>
-                                                <option value="6to">6to</option>
+                                            <select class="form-control" name="grado" id="grado" required>
+                                                <option value="1">1ro</option>
+                                                <option value="2">2do</option>
+                                                <option value="3">3ro</option>
+                                                <option value="4">4to</option>
+                                                <option value="5">5to</option>
+                                                <option value="6">6to</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
                                             <br>
-                                            <button type="submit" class="btn btn-default">Cancelar</button>
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                            <button type="reset" class="btn btn-primary">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Guardar</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -271,7 +273,7 @@
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/jquery.metisMenu.js"></script>
       <!-- Custom Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
-    
-   
+    <script src="../JS/18_regisrtar_materia.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 </body>
 </html>
