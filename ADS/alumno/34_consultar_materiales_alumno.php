@@ -1,4 +1,22 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+/*session_start();
+if(!$_SESSION['login'])
+{
+    header('Location: index.php');
+}*/
+include ('../Connect.php');
+$_SESSION['correo']= "ayuda2@gmail.com";
+$correo = $_SESSION['correo'];
+
+$consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
+$resultadoa = mysqli_query($conex,$consultaa);
+
+$consulta = "SELECT * FROM materia";                            //Consulta Materia
+$resultadoMateria = mysqli_query($conex,$consulta);
+
+?>
+
+<!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
@@ -12,7 +30,7 @@ Website: http://www.webthemez.com/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>Consultar Respuesta</title>
+    <title>Consultar materiales</title>
     <!-- Bootstrap Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -126,22 +144,22 @@ Website: http://www.webthemez.com/
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="28_consultar_calificaciones_general_actividades.html" >Actividades</a>
+                                <a href="27_consultar_calificaciones_actividad.html" class="active-menu">Actividades</a>
                             </li>
                             <li>
-                                <a href="26_consultar_calificaciones_general.html" class="active-menu">Parcial y final</a>
+                                <a href="25_consultar_calificaciones_alumno.html" >Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
                     <li>
-                        <a href="35_consultar_materiales_padre.html"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="34_consultar_materiales_alumno.html"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="30_consultar_planeacion_padre.html"><i class="fa fa-table"></i> Planeación</a>
+                        <a href="29_consultar_planeacion_alumno.html"><i class="fa fa-table"></i> Planeación</a>
                     </li>
                     <li>
-                        <a href="../01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
+                        <a href="01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
@@ -171,10 +189,11 @@ Website: http://www.webthemez.com/
                                     <div class="form-group">
                                         <label for="nombre" class="col-sm-2 control-label">Alumno:</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control" id="nombre">
-                                                <option value="A1">Alumno 1</option>
-                                                <option value="A2">Alumno 2</option>
-                                            </select>
+                                            <output type="text" class="form-control" id="nombre">
+                                            <?php while($registroa = mysqli_fetch_assoc($resultadoa)){
+                                                echo $registroa['nombre']." ".$registroa['ap_paterno']." ".$registroa['ap_materno']; //para el nombre
+                                            }?>
+                                            </output>
                                             <br>
                                         </div>
                                     </div>
@@ -192,7 +211,7 @@ Website: http://www.webthemez.com/
                                     <div class="form-group">
                                         <div class="col-sm-8"></div>
                                         <div class="col-sm-4" align="right">
-                                            <a href="#" class="btn btn-primary">Consultar</a>
+                                            <a href="#" class="btn btn-primary" onclick="actionRead();">Consultar</a>
                                             <br>
                                         </div>
                                     </div>
@@ -276,12 +295,16 @@ Website: http://www.webthemez.com/
 	
     <!-- Custom Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
-
+    <script>
+        $(document).ready(function(){
+          actionRead();
+        });
+      </script>
       
     <!-- Chart Js -->
     <script type="text/javascript" src="../../brilliant-free-bootstrap-admin-template/assets/js/Chart.min.js"></script>  
     <script type="text/javascript" src="../../brilliant-free-bootstrap-admin-template/assets/js/chartjs.js"></script> 
-
+    <script type="text/javascript" src="../js/34_consultar_materiales_alumno.js"></script> 
 </body>
 
 </html>
