@@ -288,20 +288,20 @@ Website: http://www.webthemez.com/
                     </li>
 					 
 					 <li>
-                        <a href="#"><i class="fa fa-sitemap"></i>Usuarios<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="23_relacionar_padres.php" class="active-menu">Padres</a>
+                        <a href="23_relacionar_padres.php" class="active-menu">PADRES</a>
                             </li>
                             <li>
-                                <a href="">Alumnos</a>
+                                <a href="21_registrar_alumnos_clases.php">ALUMNOS</a>
                             </li>
                             <li>
-                                <a href="" >Docentes</a>
+                                <a href="22_registrar_docentes_grupos.php">DOCENTES</a>
                             </li>
-                            <li>
-                                <a href="Registrar_docentes_a_grupos.html" >Registrar grupos</a>
-                            </li>
+                            </ul>
+                        </li>	
+                            
+        		<li>
+                                <a href="22_registrar_docentes_grupos.php" >Registrar grupos</a>
+                        </li>
 							</ul>
 						</li>	
                     <li>
