@@ -55,7 +55,7 @@ Website: http://www.webthemez.com/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
+                <a class="navbar-brand" href="../index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
 				<div id="sideNav" href="">
 			<i class="fa fa-bars icon"></i> 
 			</div>
@@ -76,7 +76,7 @@ Website: http://www.webthemez.com/
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="33_consultar_respuestas.html">
+                            <a href="33_consultar_respuestas.php">
                                 <div>
                                     <strong>Consultar respuestas</strong>
                                 </div>
