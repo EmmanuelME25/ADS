@@ -205,26 +205,26 @@ Website: http://www.webthemez.com/
                                         <div>
                                             <textarea class="form-control" rows="12" id="mi" >
                                                 <?php
-                                                if(isset($_REQUEST['consultar'])){
-                                                    $txt=$_COOKIE['x'];
-                                                    $txt2=$_COOKIE['y'];
+                                                // if(isset($_REQUEST['consultar'])){
+                                                //     $txt=$_COOKIE['x'];
+                                                //     $txt2=$_COOKIE['y'];
 
-                                                    while($registroMateria = mysqli_fetch_assoc($resultadoMateria) and $registroProfe = mysqli_fetch_assoc($resultadoProfe)){
-                                                        $consultaPlan = "SELECT * FROM planeacion where profesor_usuario_correo = ".'"'.$registroMateria['materia_idmateria'].'"'." AND materia_idmateria = ".'"'.$registroProfe['profesor_usuario_correo'].'"'."";   //Consulta para Planeacion
-                                                        $resultadoPlan = mysqli_query($conex,$consultaPlan);
-                                                        while($registroPlan = mysqli_fetch_assoc($resultadoPlan)){
-                                                            $consultaAct = "SELECT * FROM actividad where ".'"'.$registroPlan['planeacion_idplaneacion'].'"'." AND (fecha between '$txt' and '$txt2')";   //Consulta para Planeacion
-                                                            $resultadoAct = mysqli_query($conex,$consultaAct);
-                                                            if(!$resultadoAct) {
-                                                                var_dump(mysqli_error($conex));
-                                                                exit;
-                                                            }
-                                                        }
-                                                    }
-                                                    while ($RegistroAct = mysqli_fetch_assoc($resultadoAct)) {
-                                                        echo $RegistroAct['	materiales_ini'];
-                                                    }
-                                                }
+                                                //     while($registroMateria = mysqli_fetch_assoc($resultadoMateria) and $registroProfe = mysqli_fetch_assoc($resultadoProfe)){
+                                                //         $consultaPlan = "SELECT * FROM planeacion where profesor_usuario_correo = ".'"'.$registroMateria['materia_idmateria'].'"'." AND materia_idmateria = ".'"'.$registroProfe['profesor_usuario_correo'].'"'."";   //Consulta para Planeacion
+                                                //         $resultadoPlan = mysqli_query($conex,$consultaPlan);
+                                                //         while($registroPlan = mysqli_fetch_assoc($resultadoPlan)){
+                                                //             $consultaAct = "SELECT * FROM actividad where ".'"'.$registroPlan['planeacion_idplaneacion'].'"'." AND (fecha between '$txt' and '$txt2')";   //Consulta para Planeacion
+                                                //             $resultadoAct = mysqli_query($conex,$consultaAct);
+                                                //             if(!$resultadoAct) {
+                                                //                 var_dump(mysqli_error($conex));
+                                                //                 exit;
+                                                //             }
+                                                //         }
+                                                //     }
+                                                //     while ($RegistroAct = mysqli_fetch_assoc($resultadoAct)) {
+                                                //         echo $RegistroAct['	materiales_ini'];
+                                                //     }
+                                                // }
                                                 ?>
                                             </textarea>
                                         </div>
@@ -235,9 +235,9 @@ Website: http://www.webthemez.com/
                                         <div>
                                             <textarea class="form-control" rows="12" id="ma">
                                                 <?php
-                                                    while ($RegistroAct = mysqli_fetch_assoc($resultadoAct)) {
-                                                        echo $RegistroAct['	materiales_adi'];
-                                                    }
+                                                    // while ($RegistroAct = mysqli_fetch_assoc($resultadoAct)) {
+                                                    //     echo $RegistroAct['	materiales_adi'];
+                                                    // }
                                                 ?>
                                                 </textarea>
                                         </div>
