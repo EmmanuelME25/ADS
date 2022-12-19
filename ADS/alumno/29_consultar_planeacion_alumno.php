@@ -32,7 +32,7 @@ Website: http://www.webthemez.com/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>Bootstrap Admin Theme : Master - WebThemez</title>
+    <title>Consultar planeación</title>
 	<!-- Bootstrap Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -434,6 +434,6 @@ Website: http://www.webthemez.com/
 	</script>
       <!-- Custom Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script> 
-	
+	<script src="../js/29_consultar_planeacion_alumno.js"></script> 
 </body>
 </html>

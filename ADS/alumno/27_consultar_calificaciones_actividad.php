@@ -354,23 +354,18 @@ Website: http://www.webthemez.com/
                                             <tr>
                                                 <th>Actividad</th>
                                                 <th>Calificación</th>
-                                                <th>Comentarios</th>
+                                                <!-- <th>Comentarios</th> -->
                                             </tr>
                                         </thead> 
                                         <tbody>
                                             <?php
-                                                if(isset($_REQUEST['consultar'])){
-                                                    $materiat= "1";
-                                                    $consultal = "SELECT * FROM calif_act ca JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where (alumno_usuario_correo = '$correo' and actividad_planeacion_materia_idmateria=$materiat)";
-                                                    $resultadol = mysqli_query($conex,$consultal);
-                                                    while ($RegistroU = mysqli_fetch_assoc($resultadol)) {
-                                                        echo "<tr>";
-                                                       echo "<td>".$RegistroU['nombre']."</td>";
-                                                       echo "<td>".$RegistroU['calificacion']."</td>";
-                                                       echo "<td>".$RegistroU['comentarios']."</td>";
-                                                       echo "<tr>";
-                                                    } 
-                                                }                                            
+                                                while ($RegistroU = mysqli_fetch_assoc($resultadol)) {
+                                                    echo "<tr>";
+                                                   echo "<td>".$RegistroU['nombre']."</td>";
+                                                   echo "<td>".$RegistroU['calificacion']."</td>";
+                                                //    echo "<td>".$RegistroU['comentarios']."</td>";
+                                                   echo "<tr>";
+                                                }
                                             ?>
                                         </tbody>
                                     </table>
