@@ -1,11 +1,11 @@
 ﻿<?php 
-/*session_start();
-if(!$_SESSION['login'])
+session_start();
+/*if(!$_SESSION['login'])
 {
     header('Location: index.php');
 }*/
 include ('../Connect.php');
-$_SESSION['correo']= "padre3@gmail.com";
+// $_SESSION['correo']= "padre3@gmail.com";
 $correo = $_SESSION['correo'];
 
 $consultap = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Padre

@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+session_start();
+/*if(!$_SESSION['login'])
+{
+    header('Location: index.php');
+}*/
+include ('../Connect.php');
+$correo = $_SESSION['correo'];
+
+?>
+
+<!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
@@ -42,19 +53,34 @@ Website: http://www.webthemez.com/
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                  
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="32_contactar_profesor_padres.php">
+                                <div>
+                                    <strong>Preguntar al profesor</strong>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="33_consultar_respuestas.php">
+                                <div>
+                                    <strong>Consultar respuestas</strong>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                     <!-- /.dropdown-messages -->
                 </li>
-                <!-- /.dropdown -->
-                
-                <!-- /.dropdown -->
-                
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                   
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="../cerrar.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
+                        </li>
+                    </ul>
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
@@ -66,29 +92,29 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="24_pagina_principal_general.html"><i class="fa fa-dashboard"></i> Inicio</a>
+                        <a href="#" class="active-menu"><i class="fa fa-dashboard"></i> Inicio</a>
                     </li>
 					 
 					 <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="28_consultar_calificaciones_general_actividades.html" >Actividades</a>
+                                <a href="28_consultar_calificaciones_general_actividades.php">Actividades</a>
                             </li>
                             <li>
-                                <a href="26_consultar_calificaciones_general.html" class="active-menu">Parcial y final</a>
+                                <a href="26_consultar_calificaciones_general.php" >Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
                     <li>
-                        <a href="35_consultar_materiales_padre.html"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="35_consultar_materiales_padre.php"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="30_consultar_planeacion_padre.html"><i class="fa fa-table"></i> Planeación</a>
+                        <a href="30_consultar_planeacion_padre.php"><i class="fa fa-table"></i> Planeación</a>
                     </li>
                     <li>
-                        <a href="../01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
+                        <a href="../cerrar.php"><i class="fa fa-edit"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 

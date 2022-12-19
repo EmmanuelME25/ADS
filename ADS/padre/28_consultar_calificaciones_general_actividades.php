@@ -1,18 +1,14 @@
 ﻿<?php 
 session_start();
-
+/*if(!$_SESSION['login'])
+{
+    header('Location: index.php');
+}*/
 include ('../Connect.php');
-// $_SESSION['correo']= "ayuda1@gmail.com";
 $correo = $_SESSION['correo'];
 
-$consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
-$resultadoa = mysqli_query($conex,$consultaa);
-
-$consultal = "SELECT g.nombre as grupo, m.nombre as materia, calificacion_p1,calificacion_p2,calificacion_p3,calificacion_final FROM calif_pf cf join materia m on (cf.materia_idmateria=m.idmateria) join grupo_materia gm on (m.idmateria=gm.materia_idmateria) join grupo g on (gm.grupo_idgrupo=g.idgrupo) where alumno_usuario_correo='$correo'";
-$resultadol = mysqli_query($conex,$consultal);
-
-
 ?>
+
 <!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
@@ -26,7 +22,7 @@ Website: http://www.webthemez.com/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>Consultar calificaciones actividades</title>
+    <title>Bootstrap Admin html Template : Master - WebThemez</title>
 	<!-- Bootstrap Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -36,7 +32,7 @@ Website: http://www.webthemez.com/
         <!-- Custom Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
-   <link href='../../brilliant-free-bootstrap-admin-template/http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
@@ -63,7 +59,7 @@ Website: http://www.webthemez.com/
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="31_contactar_profesor_alumno.php">
+                            <a href="32_contactar_profesor_padres.php">
                                 <div>
                                     <strong>Preguntar al profesor</strong>
                                 </div>
@@ -71,7 +67,7 @@ Website: http://www.webthemez.com/
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="33_consultar_respuestas.html">
+                            <a href="33_consultar_respuestas.php">
                                 <div>
                                     <strong>Consultar respuestas</strong>
                                 </div>
@@ -107,19 +103,19 @@ Website: http://www.webthemez.com/
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="27_consultar_calificaciones_actividad.php">Actividades</a>
+                                <a href="28_consultar_calificaciones_general_actividades.php">Actividades</a>
                             </li>
                             <li>
-                                <a href="#" class="active-menu">Parcial y final</a>
+                                <a href="26_consultar_calificaciones_general.php" class="active-menu" >Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
                     <li>
-                        <a href="34_consultar_materiales_alumno.php"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="35_consultar_materiales_padre.php"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="29_consultar_planeacion_alumno.php"><i class="fa fa-table"></i> Planeación</a>
+                        <a href="30_consultar_planeacion_padre.php"><i class="fa fa-table"></i> Planeación</a>
                     </li>
                     <li>
                         <a href="../cerrar.php"><i class="fa fa-edit"></i> Cerrar sesión</a>
@@ -130,69 +126,81 @@ Website: http://www.webthemez.com/
 
         </nav>
         <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
+       <div id="page-wrapper" >
             <div class="header"> 
-              <h1 class="page-header">Consultar calificaciones parciales y final</h1>
-              <ol class="breadcrumb">
-                  <li><a href="24_pagina_principal_general.php">Página Principal</a></li>
-                  <li class="active">Consultar calificaciones parciales y final</li>
-              </ol> 		
+                <h1 class="page-header">Consultar calificaciones de actividades</h1>
+                <ol class="breadcrumb">
+                    <li><a href="24_pagina_principal_general.html">Página Principal</a></li>
+                    <li class="active">Consultar calificaciones de actividades</li>
+                </ol> 		
             </div>
 		
-            <div id="page-inner"> 
+            <div id="page-inner">
                 <div class="row">
-                 <div class="col-xs-12">
-                     <div class="panel panel-default">
-                         <div class="panel-body">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="nombre" class="col-sm-1 control-label">Nombre:</label>
-                                    <div class="col-sm-11">
-                                    <output type="text" class="form-control" id="nombre">
-                                            <?php while($registroa = mysqli_fetch_assoc($resultadoa)){
-                                                echo $registroa['nombre']." ".$registroa['ap_paterno']." ".$registroa['ap_materno']; //para el nombre
-                                            }?>
-                                        <br>
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="nombre" class="col-sm-1 control-label">Nombre:</label>
+                                        <div class="col-sm-11">
+                                            <select class="form-control" id="Alumno">
+                                                <option value="A1">Alumno 1</option>
+                                                <option value="A2">Alumno 2</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                    <div class="form-group">
+                                        <label for="nombre" class="col-sm-1 control-label">Materia:</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="materia">
+                                                <option value="m1">Historia</option>
+                                                <option value="m2">Matemáticas</option>
+                                            </select>
+                                            <br>
+                                        </div>
+                                        <div class="col-sm-2" align="center">
+                                            <a href="#" class="btn btn-primary">Consultar</a>
+                                        </div>
+                                    </div>
+                                </form>
 
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Grupo</th>
-                                            <th>Materia</th>
-                                            <th>Parcial I</th>
-                                            <th>Parcial II</th>
-                                            <th>Parcial III</th>
-                                            <th>Final</th>
-                                        </tr>
-                                    </thead> 
-                                    <tbody>
-                                    <?php
-                                        while ($RegistroUS = mysqli_fetch_assoc($resultadol)) {
-                                            echo "<tr>";
-                                            echo "<td>".$RegistroUS['grupo']."</td>";
-                                            echo "<td>".$RegistroUS['materia']."</td>";
-                                            echo "<td>".$RegistroUS['calificacion_p1']."</td>";
-                                            echo "<td>".$RegistroUS['calificacion_p2']."</td>";
-                                            echo "<td>".$RegistroUS['calificacion_p3']."</td>";
-                                            echo "<td>".$RegistroUS['calificacion_final']."</td>";
-                                            echo "</tr>";
-                                        }
-                                    ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             
-         </div>
-         <footer><br><br><br><br><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
-     </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Actividad</th>
+                                                <th>Calificación</th>
+                                                <th>Comentarios</th>
+                                            </tr>
+                                        </thead> 
+                                        <tbody>
+                                            <tr>
+                                                <td>Investigación de la Independencia</td>
+                                                <td>7.6</td>
+                                                <td>Excelente</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Línea del tiempo 1</td>
+                                                <td>8.5</td>
+                                                <td>Revisar ortografía</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Presentación culturas antiguas</td>
+                                                <td>3.6</td>
+                                                <td>Excelente</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            <footer><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+            </div>
          <!-- /. PAGE WRAPPER  -->
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
@@ -205,11 +213,11 @@ Website: http://www.webthemez.com/
      <!-- DATA TABLE SCRIPTS -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/jquery.dataTables.js"></script>
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/dataTables/dataTables.bootstrap.js"></script>
-    <script>
-        $(document).ready(function(){
-          actionRead();
-        });
-      </script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
          <!-- Custom Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
     

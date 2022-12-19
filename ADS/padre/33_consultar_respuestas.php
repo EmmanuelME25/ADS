@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+session_start();
+/*if(!$_SESSION['login'])
+{
+    header('Location: index.php');
+}*/
+include ('../Connect.php');
+$correo = $_SESSION['correo'];
+
+?>
+
+<!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
