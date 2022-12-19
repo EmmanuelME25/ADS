@@ -35,7 +35,7 @@ Website: http://www.webthemez.com/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>Bootstrap Admin Theme : Master - WebThemez   </title>
+    <title>Relacionar Padres</title>
 	<!-- Bootstrap Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -291,7 +291,7 @@ Website: http://www.webthemez.com/
                         <a href="#"><i class="fa fa-sitemap"></i>Usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="relacionarpadres.html" class="active-menu">Padres</a>
+                                <a href="23_relacionar_padres.php" class="active-menu">Padres</a>
                             </li>
                             <li>
                                 <a href="">Alumnos</a>
