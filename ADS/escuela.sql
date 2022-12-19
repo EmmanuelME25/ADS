@@ -140,7 +140,7 @@ INSERT INTO `alumno_materia` (`alumno_usuario_correo`, `materia_idmateria`) VALU
 
 CREATE TABLE `asistencia` (
   `idasistencia` int(11) NOT NULL,
-  `fecha` datetime NOT NULL,
+  `fecha` date NOT NULL,
   `estado` varchar(50) NOT NULL,
   `grupo_idgrupo` int(11) NOT NULL,
   `materia_idmateria` int(11) NOT NULL,
