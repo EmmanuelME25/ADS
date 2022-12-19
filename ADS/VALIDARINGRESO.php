@@ -32,28 +32,28 @@ $rcp=mysqli_query($conex,$cp);
 $fcp=mysqli_num_rows($rcp);
 if($fcp)
 {
-    header("location:padre/24_pagina_principal_general.html");
+    header("location:padre/24_pagina_principal_general.php");
 }
 $ca="SELECT * FROM alumno WHERE usuario_correo= '$usuario'";
 $rca=mysqli_query($conex,$ca);
 $fca=mysqli_num_rows($rca);
 if($fca)
 {
-    header("location:alumno/24_pagina_principal_general.html");
+    header("location:alumno/24_pagina_principal_general.php");
 }
 $cad="SELECT * FROM administrador WHERE usuario_correo= '$usuario'";
 $rcad=mysqli_query($conex,$cad);
 $fcad=mysqli_num_rows($rcad);
 if($fcad)
 {
-    header("location:admin/15_pagina_principal_admin.html");
+    header("location:admin/15_pagina_principal_admin.php");
 }
 $cpr="SELECT * FROM profesor WHERE usuario_correo= '$usuario'";
 $rcpr=mysqli_query($conex,$cpr);
 $fcpr=mysqli_num_rows($rcpr);
 if($fcpr)
 {
-    header("location:docente/03_pagina_principal_docente.html");
+    header("location:docente/03_pagina_principal_docente.php");
 }
 
 }

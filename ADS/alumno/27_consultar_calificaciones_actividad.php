@@ -1,11 +1,11 @@
 ﻿<?php 
-// session_start();
+session_start();
 // if(!$_SESSION['login'])
 // {
 //     header('Location: ../index.html');
 // }
 include ('../Connect.php');
-$_SESSION['correo']= "ayuda4@gmail.com";
+// $_SESSION['correo']= "ayuda4@gmail.com";
 $correo = $_SESSION['correo'];
 
 $consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
@@ -270,35 +270,34 @@ Website: http://www.webthemez.com/
                 <!-- /.dropdown -->
             </ul>
         </nav>
-        <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="24_pagina_principal_general.html"><i class="fa fa-dashboard"></i> Inicio</a>
+                        <a href="24_pagina_principal_general.php"><i class="fa fa-dashboard"></i> Inicio</a>
                     </li>
 					 
 					 <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="27_consultar_calificaciones_actividad.html" class="active-menu">Actividades</a>
+                                <a href="#" class="active-menu">Actividades</a>
                             </li>
                             <li>
-                                <a href="25_consultar_calificaciones_alumno.html" >Parcial y final</a>
+                                <a href="25_consultar_calificaciones_alumno.php">Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
                     <li>
-                        <a href="34_consultar_materiales_alumno.html"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="34_consultar_materiales_alumno.php"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="29_consultar_planeacion_alumno.html"><i class="fa fa-table"></i> Planeación</a>
+                        <a href="29_consultar_planeacion_alumno.php"><i class="fa fa-table"></i> Planeación</a>
                     </li>
                     <li>
-                        <a href="../01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
+                        <a href="../cerrar.php"><i class="fa fa-edit"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
