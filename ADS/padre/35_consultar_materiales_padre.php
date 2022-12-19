@@ -1,4 +1,26 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+/*session_start();
+if(!$_SESSION['login'])
+{
+    header('Location: index.php');
+}*/
+include ('../Connect.php');
+$_SESSION['correo']= "ayuda2@gmail.com";
+$correo = $_SESSION['correo'];
+
+$consultap = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Padre
+$resultadop = mysqli_query($conex,$consultap);
+
+$consultah = "SELECT usuario_correo FROM alumno where padre_usuario_correo = '$correo'";   //Consulta para Hijos
+$resultadoh = mysqli_query($conex,$consultah);
+$registroh = mysqli_fetch_assoc($resultadoh);
+
+$consultaa = "SELECT * FROM usuario where correo = '$registroh'";   //Consulta para Alumno
+$resultadoa = mysqli_query($conex,$consultaa);
+
+?>
+
+<!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
@@ -126,22 +148,22 @@ Website: http://www.webthemez.com/
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="27_consultar_calificaciones_actividad.html" class="active-menu">Actividades</a>
+                                <a href="28_consultar_calificaciones_general_actividades.html" >Actividades</a>
                             </li>
                             <li>
-                                <a href="25_consultar_calificaciones_alumno.html" >Parcial y final</a>
+                                <a href="26_consultar_calificaciones_general.html" class="active-menu">Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
                     <li>
-                        <a href="34_consultar_materiales_alumno.html"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="35_consultar_materiales_padre.html"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="29_consultar_planeacion_alumno.html"><i class="fa fa-table"></i> Planeación</a>
+                        <a href="30_consultar_planeacion_padre.html"><i class="fa fa-table"></i> Planeación</a>
                     </li>
                     <li>
-                        <a href="01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
+                        <a href="../01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
@@ -171,7 +193,10 @@ Website: http://www.webthemez.com/
                                     <div class="form-group">
                                         <label for="nombre" class="col-sm-2 control-label">Alumno:</label>
                                         <div class="col-sm-10">
-                                            <output type="text" class="form-control" id="nombre"></output>
+                                            <select class="form-control" id="nombre">
+                                                <option value="A1">Alumno 1</option>
+                                                <option value="A2">Alumno 2</option>
+                                            </select>
                                             <br>
                                         </div>
                                     </div>
