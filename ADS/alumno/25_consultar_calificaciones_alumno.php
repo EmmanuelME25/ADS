@@ -63,7 +63,7 @@ Website: http://www.webthemez.com/
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="32_contactar_profesor_padres.php">
+                            <a href="31_contactar_profesor_alumno.php">
                                 <div>
                                     <strong>Preguntar al profesor</strong>
                                 </div>
@@ -86,15 +86,6 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li>
-                        <a href="#">
-                            <?php 
-                                $registrous = mysqli_fetch_assoc($resultadoa);
-                                echo '<i class="fa fa-user fa-fw"></i> '.$registrous['nombre'];
-                            ?>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
                         <li><a href="../cerrar.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
                         </li>
                     </ul>

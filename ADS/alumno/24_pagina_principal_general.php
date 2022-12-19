@@ -79,15 +79,6 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li>
-                        <a href="#">
-                            <?php 
-                                $registroa = mysqli_fetch_assoc($resultadoa);
-                                echo '<i class="fa fa-user fa-fw"></i> '.$registroa['nombre'];
-                            ?>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
                         <li><a href="../cerrar.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
                         </li>
                     </ul>

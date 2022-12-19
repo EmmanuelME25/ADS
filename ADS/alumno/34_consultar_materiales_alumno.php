@@ -68,45 +68,18 @@ Website: http://www.webthemez.com/
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="#">
+                            <a href="31_contactar_profesor_alumno.php">
                                 <div>
-                                    <strong>John Doe</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Today</em>
-                                    </span>
+                                    <strong>Preguntar al profesor</strong>
                                 </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a href="33_consultar_respuestas.html">
                                 <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
+                                    <strong>Consultar respuestas</strong>
                                 </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                     </ul>
@@ -118,12 +91,7 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="../cerrar.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -137,29 +105,29 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="24_pagina_principal_general.html"><i class="fa fa-dashboard"></i> Inicio</a>
+                        <a href="24_pagina_principal_general.php"><i class="fa fa-dashboard"></i> Inicio</a>
                     </li>
 					 
 					 <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="27_consultar_calificaciones_actividad.html" class="active-menu">Actividades</a>
+                                <a href="27_consultar_calificaciones_actividad.php">Actividades</a>
                             </li>
                             <li>
-                                <a href="25_consultar_calificaciones_alumno.html" >Parcial y final</a>
+                                <a href="25_consultar_calificaciones_alumno.php" >Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
                     <li>
-                        <a href="34_consultar_materiales_alumno.html"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="34_consultar_materiales_alumno.php" class="active-menu"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="29_consultar_planeacion_alumno.html"><i class="fa fa-table"></i> Planeación</a>
+                        <a href="29_consultar_planeacion_alumno.php"><i class="fa fa-table"></i> Planeación</a>
                     </li>
                     <li>
-                        <a href="01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
+                        <a href="../cerrar.php"><i class="fa fa-edit"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
