@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    session_start();
+?>
+<!DOCTYPE html>
 <!-- 
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
@@ -66,16 +69,16 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="../01_index.html"><i class="fa fa-dashboard"></i> Página Principal</a>
+                        <a href="03_pagina_principal_docente.php"><i class="fa fa-dashboard"></i> Página Principal</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-desktop"></i>Pase de lista<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="11_consultar_lista_asistencia.html">Consultar lista de asistencia</a>
+                                <a href="11_consultar_lista_asistencia.php">Consultar lista de asistencia</a>
                             </li>
                             <li>
-                                <a href="12_generar_lista_asistencia.html">Generar lista de asistencia</a>
+                                <a href="12_generar_lista_asistencia.php">Generar lista de asistencia</a>
                             </li>
 						</ul>
                     </li>
@@ -85,14 +88,11 @@ Website: http://www.webthemez.com/
                             <li>
                                 <a href="#">Calificiones de actividades<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
-                                    <!-- <li>
-                                        <a href="#">Consultar calificaciones de actividad</a>
-                                    </li> -->
                                     <li>
-                                        <a href="04_calificar_actividad.html">Calificar una actividad</a>
+                                        <a href="04_calificar_actividad.php">Calificar una actividad</a>
                                     </li>
                                     <li>
-                                        <a href="06_eliminar_calif_actividad.html">Eliminar calificaciones de actividad</a>
+                                        <a href="06_eliminar_calif_actividad.php">Eliminar calificaciones de actividad</a>
                                     </li>
                                 </ul>
                             </li>
@@ -100,10 +100,10 @@ Website: http://www.webthemez.com/
                                 <a href="#">Calificar parciales<samp class="fa arrow"></samp></a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="07_registrar_calif_parciales.html">Registrar calificaciones de parcial</a>
+                                        <a href="07_registrar_calif_parciales.php">Registrar calificaciones de parcial</a>
                                     </li>
                                     <li>
-                                        <a href="08_actualizar_calif_parciales.html">Actualizar calificaciones de parcial</a>
+                                        <a href="08_actualizar_calif_parciales.php">Actualizar calificaciones de parcial</a>
                                     </li>
 
                                 </ul>
@@ -111,11 +111,11 @@ Website: http://www.webthemez.com/
 						</ul>
 					</li>
                     <li>
-                        <a href="09_10_crear_planeacion.html"><i class="fa fa-qrcode"></i>Planeaciones</a>
+                        <a href="09_10_crear_planeacion.php"><i class="fa fa-qrcode"></i>Planeaciones</a>
                     </li>
                     
                     <li>
-                        <a href="../01_index.html"><i class="fa fa-table"></i>Cerrar sesión</a>
+                        <a href="../cerrar.php"><i class="fa fa-table"></i>Cerrar sesión</a>
                     </li>
                 </ul>
 
