@@ -152,8 +152,8 @@ Website: http://www.webthemez.com/
                                 <ul>
                                     <li>Calificaciones
                                         <ul>
-                                            <li><a href="#">Consultar calificaciones de actividades</a></li>
-                                            <li><a href="#">Consultar calificaciones parciales y final</a></li>
+                                            <li><a href="28_consultar_calificaciones_general_actividades.php">Consultar calificaciones de actividades</a></li>
+                                            <li><a href="26_consultar_calificaciones_general.php">Consultar calificaciones parciales y final</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -168,8 +168,8 @@ Website: http://www.webthemez.com/
                                 <ul>                               
                                     <li>Planeaciones
                                         <ul>
-                                            <li><a href="#">Consultar planeaciones</a></li>
-                                            <li><a href="#">Consultar materiales</a></li>
+                                            <li><a href="30_consultar_planeacion_padre.php">Consultar planeaciones</a></li>
+                                            <li><a href="35_consultar_materiales_padre.php">Consultar materiales</a></li>
                                         </ul>
                                     </li>
                                 </ul>

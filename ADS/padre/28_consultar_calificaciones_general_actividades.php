@@ -46,7 +46,7 @@ Website: http://www.webthemez.com/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
+                <a class="navbar-brand" href="../index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
 				<div id="sideNav" href="">
 			<i class="fa fa-bars icon"></i> 
 			</div>
@@ -103,10 +103,10 @@ Website: http://www.webthemez.com/
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="28_consultar_calificaciones_general_actividades.php">Actividades</a>
+                                <a href="28_consultar_calificaciones_general_actividades.php" class="active-menu">Actividades</a>
                             </li>
                             <li>
-                                <a href="26_consultar_calificaciones_general.php" class="active-menu" >Parcial y final</a>
+                                <a href="26_consultar_calificaciones_general.php" >Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
@@ -130,7 +130,7 @@ Website: http://www.webthemez.com/
             <div class="header"> 
                 <h1 class="page-header">Consultar calificaciones de actividades</h1>
                 <ol class="breadcrumb">
-                    <li><a href="24_pagina_principal_general.html">Página Principal</a></li>
+                    <li><a href="24_pagina_principal_general.php">Página Principal</a></li>
                     <li class="active">Consultar calificaciones de actividades</li>
                 </ol> 		
             </div>

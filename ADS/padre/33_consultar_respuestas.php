@@ -47,7 +47,7 @@ Website: http://www.webthemez.com/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
+                <a class="navbar-brand" href="../index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
 				
 		<div id="sideNav" href="">
 		<i class="fa fa-bars icon"></i> 
@@ -61,45 +61,18 @@ Website: http://www.webthemez.com/
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="#">
+                            <a href="32_contactar_profesor_padres.php">
                                 <div>
-                                    <strong>John Doe</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Today</em>
-                                    </span>
+                                    <strong>Preguntar al profesor</strong>
                                 </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a href="33_consultar_respuestas.php">
                                 <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
+                                    <strong>Consultar respuestas</strong>
                                 </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
                     </ul>
@@ -111,12 +84,7 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="../cerrar.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -130,28 +98,29 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Inicio</a>
+                        <a href="24_pagina_principal_general.php"><i class="fa fa-dashboard"></i> Inicio</a>
                     </li>
-                    <li>
+					 
+					 <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="chart.html"> Actividades</a>
+                                <a href="28_consultar_calificaciones_general_actividades.php">Actividades</a>
                             </li>
                             <li>
-                                <a href="morris-chart.html"> Parcial y final</a>
+                                <a href="26_consultar_calificaciones_general.php" >Parcial y final</a>
                             </li>
 							</ul>
-					</li>	
+						</li>	
                     <li>
-                        <a href="consultaMateriales.html"><i class="fa fa-desktop"></i> Materiales</a>
-                    </li> 	
-                    <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Planeación</a>
+                        <a href="35_consultar_materiales_padre.php"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Cerrar sesión</a>
+                        <a href="30_consultar_planeacion_padre.php"><i class="fa fa-table"></i> Planeación</a>
+                    </li>
+                    <li>
+                        <a href="../cerrar.php"><i class="fa fa-edit"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 

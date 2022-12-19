@@ -54,7 +54,7 @@ Website: http://www.webthemez.com/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
+                <a class="navbar-brand" href="../index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
 				
 		<div id="sideNav" href="">
 		<i class="fa fa-bars icon"></i> 
@@ -76,7 +76,7 @@ Website: http://www.webthemez.com/
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="33_consultar_respuestas.html">
+                            <a href="33_consultar_respuestas.php">
                                 <div>
                                     <strong>Consultar respuestas</strong>
                                 </div>
@@ -91,16 +91,7 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li>
-                        <a href="#">
-                            <?php 
-                                $registrop = mysqli_fetch_assoc($resultadop);
-                                echo '<i class="fa fa-user fa-fw"></i> '.$registrop['nombre'];
-                            ?>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
+                        <li><a href="../cerrar.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -114,29 +105,29 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="24_pagina_principal_general.html"><i class="fa fa-dashboard"></i> Inicio</a>
+                        <a href="24_pagina_principal_general.php"><i class="fa fa-dashboard"></i> Inicio</a>
                     </li>
 					 
 					 <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Calificaciones<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="28_consultar_calificaciones_general_actividades.html" >Actividades</a>
+                                <a href="28_consultar_calificaciones_general_actividades.php">Actividades</a>
                             </li>
                             <li>
-                                <a href="26_consultar_calificaciones_general.html" class="active-menu">Parcial y final</a>
+                                <a href="26_consultar_calificaciones_general.php" >Parcial y final</a>
                             </li>
 							</ul>
 						</li>	
                     <li>
-                        <a href="35_consultar_materiales_padre.html"><i class="fa fa-qrcode"></i> Materiales</a>
+                        <a href="#"  class="active-menu"><i class="fa fa-qrcode"></i> Materiales</a>
                     </li>
                     
                     <li>
-                        <a href="30_consultar_planeacion_padre.html"><i class="fa fa-table"></i> Planeación</a>
+                        <a href="30_consultar_planeacion_padre.php"><i class="fa fa-table"></i> Planeación</a>
                     </li>
                     <li>
-                        <a href="../01_index.html"><i class="fa fa-edit"></i> Cerrar sesión</a>
+                        <a href="../cerrar.php"><i class="fa fa-edit"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
