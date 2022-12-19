@@ -1,24 +1,37 @@
+<?php 
+/*session_start();
+if(!$_SESSION['login'])
+{
+    header('Location: index.php');
+}*/
+include ('../Connect.php');
+$_SESSION['correo']= "padre3@gmail.com";
+$correo = $_SESSION['correo'];
+
+$consultap = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Padre
+$resultadop = mysqli_query($conex,$consultap);
+
+$consultah = "SELECT usuario_correo FROM alumno where padre_usuario_correo = '$correo'";   //Consulta para Hijos
+$resultadoh = mysqli_query($conex,$consultah);
+
+$consultaProfe = "SELECT * FROM profesor";   //Consulta para Profesor
+$resultadoProfe = mysqli_query($conex,$consultaProfe);
+
+?>
+
+
 <!DOCTYPE html>
-<!-- 
-Template Name: BRILLIANT Bootstrap Admin Template
-Version: 4.5.6
-Author: WebThemez
-Website: http://www.webthemez.com/ 
--->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>Bootstrap Admin Theme : Master - WebThemez</title>
+    <title>Contactar Profesor</title>
 	<!-- Bootstrap Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/font-awesome.css" rel="stylesheet" />
-	
-    <link href="../../brilliant-free-bootstrap-admin-template/assets/css/select2.min.css" rel="stylesheet" >
-	<link href="../../brilliant-free-bootstrap-admin-template/assets/css/checkbox3.min.css" rel="stylesheet" >
         <!-- Custom Styles-->
     <link href="../../brilliant-free-bootstrap-admin-template/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
@@ -36,8 +49,8 @@ Website: http://www.webthemez.com/
                 </button>
                 <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> SCC</strong></a>
 				<div id="sideNav" href="">
-			<i class="fa fa-bars icon"></i> 
-			</div>
+		<i class="fa fa-bars icon"></i> 
+		</div>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -90,85 +103,6 @@ Website: http://www.webthemez.com/
                         </li>
                     </ul>
                     <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">28% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
-                                            <span class="sr-only">28% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">85% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                            <span class="sr-only">85% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
@@ -285,117 +219,75 @@ Website: http://www.webthemez.com/
 
         </nav>
         <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
-		  <div class="header"> 
-            <h1 class="page-header">Consultar Planeación</h1>
-            <ol class="breadcrumb">
-                <li><a href="#">Página Principal</a></li>
-                <li class="active">Consultar Planeación</li>
-            </ol> 		
-		</div>
-		
-            <div id="page-inner"> 
-            <!-- -------------------------------------------------------------------------------------------------------- -->
+        <div id="page-wrapper">
+		    <div class="header"> 
+                        <h1 class="page-header">
+                            Mensajes <small>Contacta al profesor</small>
+                        </h1>
+						<ol class="breadcrumb">
+					  <li><a href="#">Inicio</a></li>
+					  <li class="active">Mensajes</li>
+					</ol> 
+									
+		    </div>
+            <div id="page-inner" > 
+                <!-- /. ROW  -->
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-xs-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <form class="form-horizontal">
                                     <div class="form-group">
-                                        <label for="materia" class="col-sm-2 control-label">Materia:</label>
+                                        <label for="plan" class="col-sm-2 control-label">Nombre del profesor:</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control" id="materia">
-                                                <option value="Historia">Historia</option>
-                                                <option value="Español">Español</option>
-                                                <option value="Matematicas">Matematicas</option>
-                                                <option value="Ciencias Naturales">Ciencias Naturales</option>
-                                                <option value="Geografia">Geografia</option>
-                                                <option value="Etica">Etica</option>
+                                            <select class="form-control" id="profesor_nombre">
+                                            <?php 
+                                                while($registroProfe = mysqli_fetch_assoc($resultadoProfe)){
+                                                $consultaNomProf = "SELECT * FROM usuario where correo = ".'"'.$registroProfe['usuario_correo'].'"'."";
+                                                $resultadoNomProf = mysqli_query($conex,$consultaNomProf);
+                                                while($registroNomProf = mysqli_fetch_assoc($resultadoNomProf)){ 
+                                                    echo "<option>".$registroNomProf['nombre']." ".$registroNomProf['ap_paterno']." ".$registroNomProf['ap_materno']."</option>";
+                                                }}
+                                            ?>
                                             </select>
-                                            <br>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="materia" class="col-sm-2 control-label">Fecha inicio:</label>
-                                        <div class="col-sm-4">
-                                            <input type="date" class="form-control" id="fecha">
-                                            <br>
-                                        </div>
-                                        <label for="materia" class="col-sm-2 control-label">Fecha fin:</label>
-                                        <div class="col-sm-4">
-                                            <input type="date" class="form-control" id="fecha">
-                                            <br>
+                                        <label for="plan" class="col-sm-2 control-label">Asunto:</label>
+                                        <div class="col-sm-10">
+                                            <div>
+                                                <input type="text" class="form-control" placeholder="Asunto">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-sm-8"></div>
-                                        <div class="col-sm-4" align="right">
-                                            <a href="#" class="btn btn-primary">Consultar</a>
+                                        <label for="mensaje" class="col-sm-2 control-label">Mensaje:</label>
+                                        <div class="col-sm-10">
+                                            <div>
+                                                <textarea class="form-control" rows="12" id="mensaje" placeholder="Mensaje">
+
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
                                             <br>
+                                            <button type="submit" class="btn btn-default">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">Enviar</button>
                                         </div>
                                     </div>
                                 </form>
-                                <br>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th width="40%">Actividad</th>
-                                                <th width="60%">Descripción</th>
-                                            </tr>
-                                        </thead> 
-                                        <tbody>
-                                            <tr>
-                                                <td>Investigación de la Independencia</td>
-                                                <td>xxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxx x x x xxxxxxx</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Línea del tiempo 1</td>
-                                                <td>xxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxx x x x xxxxxxxx xx</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Presentación culturas antiguas</td>
-                                                <td>Hacer una presentación...</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-<!-- ----------------------------------------------------------------------------------------------------------------- -->
-                <!-- TABLA DE ARCHIVOS -->
-                    <div class="col-md-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                ARCHIVOS
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <tbody>
-                                            <tr>
-                                                <td>Libro Historia I</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Libro de personajes históricos</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Libro Historia II</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <footer><br><br><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
                
-			<footer><br><br><br><br><p align="right">|   EME   |   APRS   |   ATC   |   EDTA   |   BSVR   |</a></p></footer>
-			</div>
-             <!-- /. PAGE INNER  -->
             </div>
+             <!-- /. PAGE INNER  -->
+        </div>
+        
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
@@ -406,14 +298,9 @@ Website: http://www.webthemez.com/
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
     <script src="../../brilliant-free-bootstrap-admin-template/assets/js/jquery.metisMenu.js"></script>
-	<script src="../../brilliant-free-bootstrap-admin-template/assets/js/select2.full.min.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function() {
-	  $(".selectbox").select2();
-	});
-	</script>
       <!-- Custom Js -->
-    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script> 
-	
+    <script src="../../brilliant-free-bootstrap-admin-template/assets/js/custom-scripts.js"></script>
+    
+   
 </body>
 </html>
