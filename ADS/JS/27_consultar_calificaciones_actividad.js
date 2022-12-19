@@ -5,8 +5,9 @@ $.ajax({
     },
 
     success: function(respuesta) {
-        let op = document.getElementById("materiase");
-        let op2 = op.options[op.selectedIndex].text
+        var op = document.getElementById("materiase");
+        var op2 = op.options[op.selectedIndex].text
+        document.cookie = "x = " + op2;
     }
 });
 

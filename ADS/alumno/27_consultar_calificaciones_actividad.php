@@ -5,7 +5,7 @@
 //     header('Location: ../index.html');
 // }
 include ('../Connect.php');
-$_SESSION['correo']= "ayuda1@gmail.com";
+$_SESSION['correo']= "ayuda4@gmail.com";
 $correo = $_SESSION['correo'];
 
 $consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
@@ -333,17 +333,26 @@ Website: http://www.webthemez.com/
                                     <div class="form-group">
                                         <label for="nombre" class="col-sm-1 control-label">Materia:</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="materiase">
+                                            <select class="form-control" id="materiase" name="materiase" onchange="ShowSelected()">
                                                 <?php
                                                     while ($RegistroUsuario = mysqli_fetch_assoc($resultadoMateria)) {
-                                                        echo '<option value="'.$RegistroUsuario['id'].'">'.$RegistroUsuario['nombre'].'</option>';
+                                                        echo '<option value = "'.$RegistroUsuario['id'].'">'.$RegistroUsuario['nombre'].'</option>';
                                                     }
                                                 ?>
                                             </select>
+                                            <script>
+                                                function ShowSelected(){
+                                                var op = document.getElementById("materiase");
+                                                var op2 = op.options[op.selectedIndex].text;
+                                                document.cookie = "x = " + op2;
+                                            }
+                                            ShowSelected();
+                                            </script>
+                                            
                                             <br>
                                         </div>
                                         <div class="col-sm-2" align="center">
-                                            <input type="submit" value= "consultar" id='consultar' name='consultar' class="btn btn-primary"></input>
+                                            <input type="submit" value= "consultar" id='consultar' name='consultar' class="btn btn-primary" onclick="ShowSelected()"></input>
                                         </div>
                                     </div>
                                 </form>
@@ -359,6 +368,11 @@ Website: http://www.webthemez.com/
                                         </thead> 
                                         <tbody>
                                             <?php
+                                             if(isset($_REQUEST['consultar'])){
+                                                $txt=$_COOKIE['x'];
+                                                $consultal = "SELECT * FROM calif_act ca JOIN materia m ON (m.idmateria = ca.actividad_planeacion_materia_idmateria)JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where (alumno_usuario_correo = '$correo' and m.nombre='$txt')";
+                                                $resultadol = mysqli_query($conex,$consultal);
+
                                                 while ($RegistroU = mysqli_fetch_assoc($resultadol)) {
                                                     echo "<tr>";
                                                    echo "<td>".$RegistroU['nombre']."</td>";
@@ -366,6 +380,7 @@ Website: http://www.webthemez.com/
                                                 //    echo "<td>".$RegistroU['comentarios']."</td>";
                                                    echo "<tr>";
                                                 }
+                                            }
                                             ?>
                                         </tbody>
                                     </table>
