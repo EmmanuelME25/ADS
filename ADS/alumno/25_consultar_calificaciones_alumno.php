@@ -11,7 +11,7 @@ $correo = $_SESSION['correo'];
 $consultaa = "SELECT * FROM usuario where correo = '$correo'";   //Consulta para Alumno
 $resultadoa = mysqli_query($conex,$consultaa);
 
-$consultal = "SELECT g.nombre as grupo, m.nombre as materia, calificacion_p1,calificacion_p2,calificacion_p3,calificacion_final FROM calif_pf cf join materia m on (cf.materia_idmateria=m.idmateria) join grupo_materia gm on (m.idmateria=gm.materia_idmateria) join grupo g on (gm.grupo_idgrupo=g.idgrupo);";
+$consultal = "SELECT g.nombre as grupo, m.nombre as materia, calificacion_p1,calificacion_p2,calificacion_p3,calificacion_final FROM calif_pf cf join materia m on (cf.materia_idmateria=m.idmateria) join grupo_materia gm on (m.idmateria=gm.materia_idmateria) join grupo g on (gm.grupo_idgrupo=g.idgrupo) where alumno_usuario_correo='$correo'";
 $resultadol = mysqli_query($conex,$consultal);
 
 

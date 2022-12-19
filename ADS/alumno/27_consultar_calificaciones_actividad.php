@@ -14,13 +14,8 @@ $resultadoa = mysqli_query($conex,$consultaa);
 $consulta = "SELECT * FROM materia";                            //Consulta Materia
 $resultadoMateria = mysqli_query($conex,$consulta);
 
-$consultal = "SELECT * FROM calif_act ca JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where alumno_usuario_correo = '$correo'";
-$resultadol = mysqli_query($conex,$consultal);
-
-if(isset ($_POST['consultar'])){
-    $consultal = "SELECT * FROM calif_act ca JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where alumno_usuario_correo = '$correo' and actividad_planeacion_materia_idmateria=$cod";
-    $resultadol = mysqli_query($conex,$consultal);
-}
+//$consultal = "SELECT * FROM calif_act ca JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where alumno_usuario_correo = '$correo'";
+//$resultadol = mysqli_query($conex,$consultal);
 
 ?>
 <!DOCTYPE html>
@@ -348,7 +343,7 @@ Website: http://www.webthemez.com/
                                             <br>
                                         </div>
                                         <div class="col-sm-2" align="center">
-                                            <a href="#" id='consultar' class="btn btn-primary">Consultar</a>
+                                            <input type="submit" value= "consultar" id='consultar' name='consultar' class="btn btn-primary"></input>
                                         </div>
                                     </div>
                                 </form>
@@ -364,13 +359,18 @@ Website: http://www.webthemez.com/
                                         </thead> 
                                         <tbody>
                                             <?php
-                                                while ($RegistroU = mysqli_fetch_assoc($resultadol)) {
-                                                    echo "<tr>";
-                                                   echo "<td>".$RegistroU['nombre']."</td>";
-                                                   echo "<td>".$RegistroU['calificacion']."</td>";
-                                                   echo "<td>".$RegistroU['comentarios']."</td>";
-                                                   echo "<tr>";
-                                                }
+                                                if(isset($_REQUEST['consultar'])){
+                                                    $materiat= "1";
+                                                    $consultal = "SELECT * FROM calif_act ca JOIN actividad ac ON(ca.actividad_idactividad=ac.idactividad) where (alumno_usuario_correo = '$correo' and actividad_planeacion_materia_idmateria=$materiat)";
+                                                    $resultadol = mysqli_query($conex,$consultal);
+                                                    while ($RegistroU = mysqli_fetch_assoc($resultadol)) {
+                                                        echo "<tr>";
+                                                       echo "<td>".$RegistroU['nombre']."</td>";
+                                                       echo "<td>".$RegistroU['calificacion']."</td>";
+                                                       echo "<td>".$RegistroU['comentarios']."</td>";
+                                                       echo "<tr>";
+                                                    } 
+                                                }                                            
                                             ?>
                                         </tbody>
                                     </table>
