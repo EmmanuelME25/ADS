@@ -29,9 +29,9 @@
                         $Respuesta['id']        =  mysqli_insert_id($conex);
                     }
                 }else{
-                    $Respuesta['estado']    =   $QueryCreate;
-                    $Respuesta['mensaje']   =   $QueryCreate1;
-                    $Respuesta['id']        =   -1;
+                    $Respuesta['estado'] =  0;
+                    $Respuesta['mensaje']=  "Ocurrio un error desconocido";
+                    $Respuesta['id']     =  -1;
                 } 
         
         echo json_encode($Respuesta);
@@ -52,9 +52,9 @@
                         $Respuesta['id']        =  mysqli_insert_id($conex);
                     }
                 }else{
-                    $Respuesta['estado']    =   $QueryDelete;
-                    $Respuesta['mensaje']   =   $QueryDelete1;
-                    $Respuesta['id']        =   -1;
+                    $Respuesta['estado'] =  0;
+                    $Respuesta['mensaje']=  "Ocurrio un error desconocido";
+                    $Respuesta['id']     =  -1;
                 } 
         
         echo json_encode($Respuesta);
