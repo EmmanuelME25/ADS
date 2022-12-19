@@ -1,37 +1,41 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8" />
-  <title>Inicio de sesion</title>
-</head>
+<title>Inicio de sesion</title>
 
-  <body>
-    <link rel="stylesheet" href="nombre.css">
+<script>
+  function validateForm(){
+    var x = document.forms["inicio"]["correo"].value;
+    var x1 = document.forms["inicio"]["clave"].value;
 
-    <div class="wrapper fadeInDown">
-      <div id="formContent">
-        <!-- Tabs Titles -->
-        <h2 class="active"> Iniciar sesión </h2>
-        <br><br>
-        <!-- Login Form -->
-        <form>
-          <div class="sub-title">Correo</div>
-          <input type="text" id="login" class="fadeIn second" name="login" placeholder="Ingrese su correo">
-          <br>
-          <div class="sub-title">Contraseña</div>
-          <input type="password" id="password" class="fadeIn third" name="login" placeholder="Ingrese su contraseña">
-          <br>
-          <input type="submit" class="fadeIn fourth" value="Iniciar">
-        </form>
+      if(x==""|| x1==""){
 
-        <!-- Remind Passowrd -->
-        <div id="formFooter">
-          <a class="underlineHover" href="#">¿Olvidó su contraseña?</a>
-        </div>
-        <div>
-          <br>Si no tiene una cuenta, favor de contactar al administrador.<br><br>
-        </div>
+        alert("Campos incompletos");
+        return false;
 
-      </div>
+      }
+    }
+  </script>
+
+<link rel="stylesheet" href="nombre.css">
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Iniciar sesion </h2>
+
+
+    
+
+    <!-- Login Form -->
+    <form method="post" name="inicio" action="VALIDARINGRESO.php" onsubmit="return validateForm()">
+      <input type="text" id="login" class="fadeIn second" name="correo" placeholder="Correo">
+      <input type="password" id="password" class="fadeIn third" name="clave" placeholder="Contrasena">
+      <input type="submit" class="fadeIn fourth" value="Iniciar" >
+    </form>
+
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Olvido su contrasena?</a>
     </div>
-  </body>
-</html>
+
+  </div>
+</div>
